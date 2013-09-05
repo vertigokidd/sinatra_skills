@@ -8,7 +8,8 @@
         <li>
           <%= skill.name %> (<%= skill.context %>) . .
           Proficiency: <%=find_user_proficiency(user.id, skill.id) %>, 
-          Years Experience: <%=find_user_years(user.id, skill.id) %>
+          Years Experience: <%=find_user_years(user.id, skill.id) %>  
+          <a href='/editskill'>EDIT</a>
         </li> 
       <% end %>
     </ul>
