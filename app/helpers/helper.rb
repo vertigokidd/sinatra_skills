@@ -8,11 +8,11 @@ def find_user_years(user_id, skill_id)
   users_skill.years
 end
 
-def years_dropdown
-
+def years_array
+  1.upto(20).to_a
 end
 
 
-def proficiency_dropdown
-
+def proficiency_array
+  ["beginner", "intermediate", "advanced"]
 end

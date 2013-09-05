@@ -14,12 +14,25 @@
     </ul>
 	<br>
   <h4>Add A Skill</h4>
-  <form method="/skills_update/<%= user.id %>" action="POST">
-    <select name="Skills">
+  <form action="/skills_update" method="POST">
+    <select name="skill">
       <% Skill.all.each do |skill| %>
         <option value=<%= skill.name %>><%= skill.name %></option>
       <% end %>
     </select>
+    <select name="proficiency">
+      <% proficiency_array.each do |prof| %>
+        <option value=<%= prof %>><%= prof %></option>
+      <% end %>
+    </select>
+
+    <select name="years">
+      <% years_array.each do |year| %>
+        <option value=<%= year %>><%= year %></option>
+      <% end %>
+    </select>
+    
+    <input type="submit" value="Submit Skill"></submit>
   </form>
 
 </div>

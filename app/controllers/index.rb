@@ -60,3 +60,14 @@ post '/users' do
     erb :sign_up
   end
 end
+
+post "/skills_update" do
+  user = User.find(session[:user_id])
+  user.users_skills.create(skill_id: Skill.find_by_name(params[:skill]).id,
+                           years: params[:years].to_i,
+                           proficiency: params[:proficiency])
+  redirect '/profile'
+end
+
+
+
