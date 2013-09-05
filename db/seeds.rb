@@ -19,3 +19,12 @@ design_skills.each do |skill|
 end
 
 # TODO: create associations between users and skills
+
+30.times do
+  user_id_array = [1,2,3,4,5,6]
+  skill_id_array = [1,2,3,4,5,6,7,8,9,10]
+  proficiency_array = ["beginner", "intermediate", "advanced"]
+  user = User.find(user_id_array.sample)
+  user.users_skills.create(skill_id: skill_id_array.sample,
+  	                       proficiency: proficiency_array.sample)
+end

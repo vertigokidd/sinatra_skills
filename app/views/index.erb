@@ -2,4 +2,20 @@
   <h1>User Skills and Levels</h1>
 
   <%# TODO: display the skills and proficiency levels for each user ... %>
+  <ul>
+    <% User.all.each do |user| %>
+      <li>
+	    <%= user.name %>:
+	    <ul>
+	      <% user.skills.each do |skill| %>
+            <li>
+              <%= skill.name %> (<%= skill.context %>) . .
+              Proficiency: <%=find_user_proficiency(user.id, skill.id) %>
+            </li> 
+          <% end %>
+        </ul>
+	  </li>
+	  <br>
+	<% end %>
+  </ul>
 </div>
