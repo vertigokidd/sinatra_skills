@@ -5,6 +5,10 @@ get '/' do
   erb :index
 end
 
+get '/profile' do
+  erb :profile
+end
+
 #----------- SESSIONS -----------
 
 get '/sessions/new' do
@@ -20,7 +24,7 @@ post '/sessions' do
   if user
     # successfully authenticated; set up session and redirect
     session[:user_id] = user.id
-    redirect '/'
+    redirect '/profile'
   else
     # an error occurred, re-render the sign-in form, displaying an error
     @error = "Invalid email or password."
@@ -50,7 +54,7 @@ post '/users' do
   if @user.save
     # successfully created new account; set up the session and redirect
     session[:user_id] = @user.id
-    redirect '/'
+    redirect '/profile'
   else
     # an error occurred, re-render the sign-up form, displaying errors
     erb :sign_up

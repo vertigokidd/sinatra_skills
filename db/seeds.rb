@@ -23,8 +23,10 @@ end
 30.times do
   user_id_array = [1,2,3,4,5,6]
   skill_id_array = [1,2,3,4,5,6,7,8,9,10]
+  years_array = [1,2,3,4,5]
   proficiency_array = ["beginner", "intermediate", "advanced"]
   user = User.find(user_id_array.sample)
   user.users_skills.create(skill_id: skill_id_array.sample,
-  	                       proficiency: proficiency_array.sample)
+  	                       proficiency: proficiency_array.sample,
+  	                       years: years_array.sample)
 end
